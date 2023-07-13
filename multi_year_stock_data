@@ -58,29 +58,29 @@ Sub Copy of multi_year_Stock_data():
                 'Calculate and write Yearly Change in column J (#10)
                 ws.Cells(TickCount, 10).Value = ws.Cells(i, 6).Value - ws.Cells(j, 3).Value
                 
-                    'Conditional formating
-                    If ws.Cells(TickCount, 10).Value < 0 Then
+                     'Conditional formating
+                     If ws.Cells(TickCount, 10).Value < 0 Then
                 
                     'Set cell background color to red
-                    ws.Cells(TickCount, 10).Interior.ColorIndex = 3
+                     ws.Cells(TickCount, 10).Interior.ColorIndex = 3
                 
                     Else
                 
-                    'Set cell background color to green
-                    ws.Cells(TickCount, 10).Interior.ColorIndex = 4
+                        'Set cell background color to green
+                        ws.Cells(TickCount, 10).Interior.ColorIndex = 4
                 
                     End If
                     
-                    'Calculate and write percent change in column K (#11)
-                    If ws.Cells(j, 3).Value <> 0 Then
-                    PerChange = ((ws.Cells(i, 6).Value - ws.Cells(j, 3).Value) / ws.Cells(j, 3).Value)
+                        'Calculate and write percent change in column K (#11)
+                        If ws.Cells(j, 3).Value <> 0 Then
+                        PerChange = ((ws.Cells(i, 6).Value - ws.Cells(j, 3).Value) / ws.Cells(j, 3).Value)
                     
-                    'Percent formating
-                    ws.Cells(TickCount, 11).Value = Format(PerChange, "Percent")
+                        'Percent formating
+                        ws.Cells(TickCount, 11).Value = Format(PerChange, "Percent")
                     
                     Else
                     
-                    ws.Cells(TickCount, 11).Value = Format(0, "Percent")
+                        ws.Cells(TickCount, 11).Value = Format(0, "Percent")
                     
                     End If
                     
@@ -127,14 +127,14 @@ Sub Copy of multi_year_Stock_data():
                 
                 Else
                 
-                GreatIncr = GreatIncr
+                    GreatIncr = GreatIncr
                 
                 End If
                 
-                'For greatest decrease--check if next value is smaller--if yes take over a new value and populate ws.Cells
-                If ws.Cells(i, 11).Value < GreatDecr Then
-                GreatDecr = ws.Cells(i, 11).Value
-                ws.Cells(3, 16).Value = ws.Cells(i, 9).Value
+                    'For greatest decrease--check if next value is smaller--if yes take over a new value and populate ws.Cells
+                    If ws.Cells(i, 11).Value < GreatDecr Then
+                    GreatDecr = ws.Cells(i, 11).Value
+                    ws.Cells(3, 16).Value = ws.Cells(i, 9).Value
                 
                 Else
                 
